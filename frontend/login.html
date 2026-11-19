@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Sign in · OPPPS KITA-KITA</title>
+  <link rel="icon" type="image/svg+xml" href="/static/assets/favicon.svg" />
+  <link rel="stylesheet" href="/static/css/app.css" />
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-visual">
+      <div class="login-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.5 20 5.7v5.5c0 4.8-3.4 8.5-8 10.3-4.6-1.8-8-5.5-8-10.3V5.7L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M12 7v4.2m0 0 3 2.2m-3-2.2-3 2.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="12" cy="6.4" r="1.3" fill="currentColor"/>
+            <circle cx="15.6" cy="14.2" r="1.3" fill="currentColor"/>
+            <circle cx="8.4" cy="14.2" r="1.3" fill="currentColor"/>
+          </svg>
+        </span>
+        <div>
+          <div class="brand-name">OPPPS KITA-KITA</div>
+          <div class="brand-sub">Cyber Threat Detection</div>
+        </div>
+      </div>
+
+      <div class="login-hero">
+        <div class="eyebrow">
+          <span class="pulse" style="background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.14)"></span>
+          Security Operations Center
+        </div>
+        <h1>See the attack<br />before it <span>spreads.</span></h1>
+        <p>
+          A local-first network security monitoring platform. Ingest flow telemetry,
+          score it with supervised classification and unsupervised anomaly detection,
+          then triage the incidents that matter — all on infrastructure you control.
+        </p>
+        <div class="login-features">
+          <div class="login-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <div><strong>Real machine learning</strong><span>Random Forest and Isolation Forest trained on held-out flow data.</span></div>
+          </div>
+          <div class="login-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <div><strong>Explainable severity</strong><span>Every score exposes the rules, signals and model output behind it.</span></div>
+          </div>
+          <div class="login-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>
+            <div><strong>Local and auditable</strong><span>PostgreSQL, role-based access, audit logging and metadata-only capture.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="visual-network" viewBox="0 0 430 280" fill="none" aria-hidden="true">
+        <g stroke="#3b82f6" stroke-opacity=".22" stroke-width="1">
+          <path d="M40 220 120 150 215 190 300 110 385 150"/>
+          <path d="M120 150 90 70 180 40 300 110"/>
+          <path d="M215 190 235 260 330 230 385 150"/>
+          <path d="M180 40 120 150M300 110 330 230"/>
+        </g>
+        <g fill="#3b82f6">
+          <circle cx="40" cy="220" r="4"/><circle cx="120" cy="150" r="5"/><circle cx="215" cy="190" r="4"/>
+          <circle cx="300" cy="110" r="5"/><circle cx="385" cy="150" r="4"/><circle cx="90" cy="70" r="3.5"/>
+          <circle cx="180" cy="40" r="4"/><circle cx="235" cy="260" r="3.5"/><circle cx="330" cy="230" r="4"/>
+        </g>
+        <circle cx="300" cy="110" r="13" stroke="#ef4444" stroke-opacity=".5">
+          <animate attributeName="r" values="8;18;8" dur="3.4s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-opacity" values=".55;0;.55" dur="3.4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+
+      <div class="login-foot">
+        <span>Passive, metadata-only capture</span>
+        <span>Role-based access control</span>
+        <span>Audit trail enabled</span>
+      </div>
+    </section>
+
+    <section class="login-form-side">
+      <div class="login-card">
+        <div class="page-kicker">Welcome back</div>
+        <h2 style="margin-top:6px">Sign in to the console</h2>
+        <p class="sub">Use the credentials provisioned in your environment file. Sessions expire automatically.</p>
+
+        <form class="login-form" id="loginForm" novalidate>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="username" placeholder="analyst@example.com" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <div style="position:relative">
+              <input class="input" id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••••••" style="padding-right:56px" required />
+              <button type="button" id="togglePassword" class="btn ghost sm" style="position:absolute;right:4px;top:5px;height:32px">Show</button>
+            </div>
+          </div>
+          <div class="login-error" id="loginError" role="alert"></div>
+          <button class="btn primary" id="loginSubmit" type="submit" style="width:100%">
+            Sign in
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+
+        <div class="login-note">
+          <div class="side-status" id="loginHealth"><span class="dot"></span><span>Checking system status…</span></div>
+          <div style="margin-top:6px">No account? Ask an administrator to provision one from the Settings page. All sign-in attempts are rate-limited and audited.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/static/js/login.js"></script>
+</body>
+</html>

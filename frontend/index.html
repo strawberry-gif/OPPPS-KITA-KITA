@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>OPPPS KITA-KITA · Security Operations</title>
+  <link rel="icon" type="image/svg+xml" href="/static/assets/favicon.svg" />
+  <link rel="stylesheet" href="/static/css/app.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.5 20 5.7v5.5c0 4.8-3.4 8.5-8 10.3-4.6-1.8-8-5.5-8-10.3V5.7L12 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M12 7v4.2m0 0 3 2.2m-3-2.2-3 2.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="12" cy="6.4" r="1.3" fill="currentColor"/>
+            <circle cx="15.6" cy="14.2" r="1.3" fill="currentColor"/>
+            <circle cx="8.4" cy="14.2" r="1.3" fill="currentColor"/>
+          </svg>
+        </span>
+        <div>
+          <div class="brand-name">OPPPS KITA-KITA</div>
+          <div class="brand-sub">Cyber Threat Detection</div>
+        </div>
+      </div>
+
+      <div class="side-scroll" id="navRoot"></div>
+
+      <div class="sidebar-footer">
+        <div class="side-status" id="sideStatus">
+          <span class="dot"></span>
+          <span id="sideStatusText">Connecting to services…</span>
+        </div>
+        <div class="user-chip">
+          <div class="avatar" id="userAvatar">··</div>
+          <div class="user-meta">
+            <div class="user-name" id="userName">Loading</div>
+            <div class="user-role" id="userRole">—</div>
+          </div>
+          <button type="button" class="icon-button" id="logoutButton" title="Sign out" aria-label="Sign out"></button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="icon-button menu-toggle" id="menuToggle" aria-label="Open navigation"></button>
+        <div class="topbar-left">
+          <div class="page-kicker" id="pageKicker">Security operations</div>
+          <div class="page-title" id="pageTitle">Overview</div>
+        </div>
+        <div class="topbar-right">
+          <span class="health-chip" id="healthChip"><span class="dot"></span><span id="healthChipText">Checking…</span></span>
+          <span class="clock mono" id="clock"></span>
+          <a class="btn ghost sm" href="/api/docs" target="_blank" rel="noopener noreferrer">API docs</a>
+        </div>
+      </header>
+      <main class="view" id="view"></main>
+    </div>
+  </div>
+
+  <div class="overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="drawer" aria-live="polite"></aside>
+  <div class="toast-stack" id="toastStack"></div>
+
+  <script src="/static/vendor/chart.umd.min.js"></script>
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
